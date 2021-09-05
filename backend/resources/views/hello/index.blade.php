@@ -9,7 +9,10 @@
 
 @section('content')
     <p>ここが本文です</p>
-    <p>必要なだけ記述できます。</p>
+    
+    <p>Controlloer value<br>'message' = {{$message}}</p>
+    <p>ViewComposer value<br>'view_message' = {{$view_message}}</p>
+
 @endsection
 
 @section('footer')

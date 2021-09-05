@@ -8,9 +8,9 @@ class HelloController extends Controller
 {
     public function index(){
         
-        $cats = ['michel','mi','mu','me'];
+        $message = 'ここまでできた';
 
-        return view('hello.index',compact('cats'));
+        return view('hello.index',compact('message'));
     }
 
     public function post(Request $request){
