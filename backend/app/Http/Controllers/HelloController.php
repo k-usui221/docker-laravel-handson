@@ -8,13 +8,23 @@ class HelloController extends Controller
 {
     public function index(Request $request){
         
-        $data = $request->data;
+        $msg = 'フォームを入力';
 
-        return view('hello.index',compact('data'));
+        return view('hello.index',compact('msg'));
     }
 
     public function post(Request $request){
-        
-        return view('hello.index',['msg'=>$request->msg]);
+       
+        $validate_rule = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0,150',
+        ];
+
+        $this->validate($request,$validate_rule);
+
+        $msg = "正しく入力されました";
+
+        return view('hello.index',compact('msg'));
     }
 }

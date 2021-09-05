@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/hello',[HelloController::class,'index'])
-    ->middleware('helo');
+    //->middleware('helo')
+    ;
 
 Route::post('/hello',[HelloController::class,'post']);
