@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         
-        $message = 'ここまでできた';
+        $data = $request->data;
 
-        return view('hello.index',compact('message'));
+        return view('hello.index',compact('data'));
     }
 
     public function post(Request $request){
