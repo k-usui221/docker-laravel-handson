@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\HelloRequest;
+use App\Models\People;
+
 
 class HelloController extends Controller
 {
     public function index(Request $request){
         
-        $msg = 'フォームを入力';
+        $items = People::all();
 
-        return view('hello.index',compact('msg'));
+        return view('hello.index',['items' => $items]);
     }
 
     public function post(HelloRequest $request){
